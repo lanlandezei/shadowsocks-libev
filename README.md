@@ -1,5 +1,4 @@
-# shadowsocks-libev
-shadowsocks-libev   snap一键安装脚本，使用的UFW防火墙
+自用的shadowsocks-libev   snap一键安装脚本，使用的UFW防火墙
 
 支持系统 debian9+ ubuntu16+ centos7.5+ fedora
 
@@ -9,9 +8,9 @@ shadowsocks-libev   snap一键安装脚本，使用的UFW防火墙
 
 从snap软件库安装 https://snapcraft.io/core
 
-只支持这两种加密协议aes-256-gcm chacha20-ietf-poly1305，支持AES就用aes-256-gcm，不支持就用chacha20-ietf-poly1305
+只支持这两种加密协议aes-256-gcm chacha20-ietf-poly1305，支持AES就用aes-256-gcm，不支持就用chacha20-ietf-poly1305，其他加密方式自行修改配置文件。
 
-选择5会安装UFW防火墙，安装后默认只开放22端口，安装完请务必使用UFW防火墙添加客户端使用的IP，和SS服务的端口
+想长久稳定使用，请务必使用UFW防火墙添加客户端使用的IP，和SS服务的端口，选择5会安装UFW防火墙，安装后默认只开放22端口
 
 ### 安装方法
 ```
