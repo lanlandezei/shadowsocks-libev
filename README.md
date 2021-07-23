@@ -10,10 +10,10 @@ shadowsocks-libev   snap一键安装脚本，添加UFW防火墙
 从snap软件库安装 https://snapcraft.io/core
 
 ### 安装方法
-...
+```
 # centos
 yum -y install wget
 
 # Ubuntu
 apt-get -y install wget
-...
+```
