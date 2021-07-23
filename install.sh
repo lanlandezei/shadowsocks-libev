@@ -1,7 +1,9 @@
 #!/bin/bash
+# Auto install shadowsocks/shadowsocks-libev Server
+# System Required:   debian9+ ubuntu16+ centos7.5+ fedora
+
 port=`echo $[$RANDOM%90000+10000]`
 version=`cat /etc/os-release | grep "^ID=" | cut -d= -f2 | tr -d '"'`
-
 ufwin()
 {
 	while true
