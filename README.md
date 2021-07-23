@@ -1,5 +1,5 @@
 # shadowsocks-libev
-shadowsocks-libev   snap一键安装脚本，添加UFW防火墙
+shadowsocks-libev   snap一键安装脚本，使用的UFW防火墙
 
 支持系统 debian9+ ubuntu16+ centos7.5+ fedora
 
