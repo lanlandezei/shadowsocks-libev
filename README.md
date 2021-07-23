@@ -11,5 +11,5 @@ shadowsocks-libev   snap一键安装脚本，添加UFW防火墙
 
 ### 安装方法
 ```
-wget --no-check-certificate https://raw.githubusercontent.com/lanlandezei/shadowsocks-libev/main/install.sh && chmod+x install.sh && bash install.sh
+wget --no-check-certificate https://raw.githubusercontent.com/lanlandezei/shadowsocks-libev/main/install.sh && chmod +x install.sh && bash install.sh
 ```
