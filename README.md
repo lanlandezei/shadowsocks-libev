@@ -9,7 +9,22 @@ shadowsocks-libev   snap一键安装脚本，添加UFW防火墙
 
 从snap软件库安装 https://snapcraft.io/core
 
+只支持这两种加密协议aes-256-gcm chacha20-ietf-poly1305，支持AES就用aes-256-gcm，不支持就用chacha20-ietf-poly1305
+
+
 ### 安装方法
 ```
 wget --no-check-certificate https://raw.githubusercontent.com/lanlandezei/shadowsocks-libev/main/install.sh && chmod +x install.sh && bash install.sh
+```
+```
+请选择执行的操作
+1.选择安装的加密协议：aes-256-gcm
+2.选择安装的加密协议：chacha20-ietf-poly1305
+3.检查SS运行状态
+4.重启SS
+5.防火墙添加放行IP和端口(重要)
+—————————————————————————
+配置文件路径：/var/snap/shadowsocks-libev/common/etc/shadowsocks-libev/config.json
+修改配置文件请重启SS
+选择执行的操作1-5：
 ```
