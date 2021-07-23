@@ -11,7 +11,7 @@ shadowsocks-libev   snap一键安装脚本，使用的UFW防火墙
 
 只支持这两种加密协议aes-256-gcm chacha20-ietf-poly1305，支持AES就用aes-256-gcm，不支持就用chacha20-ietf-poly1305
 
-安装完请务必使用UFW防火墙添加客户端使用的IP。
+选择5会安装UFW防火墙，安装后默认只开放22端口，安装完请务必使用UFW防火墙添加客户端使用的IP，和SS服务的端口
 
 ### 安装方法
 ```
@@ -38,5 +38,6 @@ wget --no-check-certificate https://raw.githubusercontent.com/lanlandezei/shadow
 IP段：114.114.114.0/24
 更大范围：114.114.0.0/16
 --------------------------
-请输入添加放行防火墙的IP或IP段：
+请输入添加放行防火墙的IP或IP段：   #客户端公网IP
+请输入放行端口：                  #SS服务端的端口
 ```
