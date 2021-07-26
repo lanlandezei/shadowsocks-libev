@@ -6,7 +6,8 @@
 # Reference URL:
 # https://github.com/shadowsocks/shadowsocks-libev
 # https://gfw.report/blog/ss_tutorial/zh/
-
+port=`echo $[$RANDOM%90000+10000]`
+version=`cat /etc/os-release | grep "^ID=" | cut -d= -f2 | tr -d '"'`
 red(){
     echo -e "\033[31m\033[01m$1\033[0m"
 }
