@@ -188,6 +188,8 @@ END
 	echo "shadowsocks-libev未启动，请重新执行脚本"
 	;;
 	esac
+else
+	echo "shadowsocks-libev未安装完成，请重新执行脚本"
 fi
 }
 
