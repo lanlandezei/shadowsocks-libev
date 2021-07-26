@@ -171,6 +171,9 @@ if [ $? -eq 0 ];then
 systemctl start snap.shadowsocks-libev.ss-server-daemon.service
 systemctl enable snap.shadowsocks-libev.ss-server-daemon.service
 systemctl restart snap.shadowsocks-libev.ss-server-daemon.service
+ssstatus=$(systemctl is-active snap.shadowsocks-libev.ss-server-daemon.service)
+	case $ssstatus in
+	active)
 cat <<-END
 安装成功
 端口: $port
@@ -180,8 +183,11 @@ cat <<-END
 配置文件路径：/var/snap/shadowsocks-libev/common/etc/shadowsocks-libev/config.json
 ------------
 END
-	else
-	echo "shadowsocks-libev未安装，请重新执行脚本"
+	;;
+	*)
+	echo "shadowsocks-libev未启动，请重新执行脚本"
+	;;
+	esac
 fi
 }
 
