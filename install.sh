@@ -7,8 +7,13 @@
 # https://github.com/shadowsocks/shadowsocks-libev
 # https://gfw.report/blog/ss_tutorial/zh/
 
-port=`echo $[$RANDOM%90000+10000]`
-version=`cat /etc/os-release | grep "^ID=" | cut -d= -f2 | tr -d '"'`
+red(){
+    echo -e "\033[31m\033[01m$1\033[0m"
+}
+green(){
+    echo -e "\033[32m\033[01m$1\033[0m"
+}
+
 ufwin()
 {
 	while true
@@ -34,7 +39,7 @@ ufwin()
 			break
 		else
 			echo ""
-			echo ">>请输入正确的IP或IP段<<"
+			red ">>请输入正确的IP或IP段<<"
 			echo ""
 			continue
 		fi	
@@ -48,7 +53,7 @@ case $version in
 	do
 		yum list installed | grep "^ufw" &>/dev/null
 		if [ $? -ne 0 ];then
-		echo "ufw 未安装，即将安装"
+		green "ufw 未安装，即将安装"
 			systemctl stop firewalld
 			yum -y install epel-release
 			yum -y install ufw
@@ -67,7 +72,7 @@ case $version in
 	do
 		apt list --installed | grep "^ufw" &>/dev/null
 		if [ $? -ne 0 ];then
-		echo "ufw 未安装，即将安装"
+		green "ufw 未安装，即将安装"
 			apt -y install ufw
 			systemctl start ufw
 			systemctl enable ufw
@@ -89,7 +94,7 @@ case $version in
 	do
 		dnf list installed | grep "^ufw" &>/dev/null
 		if [ $? -ne 0 ];then
-		echo "ufw 未安装，即将安装"
+		green "ufw 未安装，即将安装"
 			systemctl stop firewalld
 			dnf -y install ufw
 			systemctl start ufw
@@ -103,7 +108,7 @@ case $version in
 	ufwin
 	;;
 	*)
-	echo "不支持该系统"
+	read "不支持该系统"
 	;;
 esac
 }
@@ -143,7 +148,7 @@ do
 		ufwinstall
 		exit
 	else
-		echo "请输入正确数字1-5："
+		red "请输入正确数字1-5："
 		continue
 	fi
 done
@@ -174,8 +179,8 @@ systemctl restart snap.shadowsocks-libev.ss-server-daemon.service
 ssstatus=$(systemctl is-active snap.shadowsocks-libev.ss-server-daemon.service)
 	case $ssstatus in
 	active)
+	green "启动成功"
 cat <<-END
-安装成功
 端口: $port
 密码：$pass
 协议：$key
@@ -185,11 +190,11 @@ cat <<-END
 END
 	;;
 	*)
-	echo "shadowsocks-libev未启动，请重新执行脚本"
+	red "shadowsocks-libev未启动，请重新执行脚本"
 	;;
 	esac
 else
-	echo "shadowsocks-libev未安装完成，请重新执行脚本"
+	red "shadowsocks-libev未安装完成，请重新执行脚本"
 fi
 }
 
@@ -238,7 +243,7 @@ do
 		break
 		;;
 		*)
-		echo "不支持该系统"
+		read "不支持该系统"
 		break
 		;;
 	esac
