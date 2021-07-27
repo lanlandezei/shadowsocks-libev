@@ -56,6 +56,7 @@ case $version in
 		if [ $? -ne 0 ];then
 		green "ufw 未安装，即将安装"
 			systemctl stop firewalld
+			systemctl disable firewalld
 			yum -y install epel-release
 			yum -y install ufw
 			systemctl start ufw
@@ -97,6 +98,7 @@ case $version in
 		if [ $? -ne 0 ];then
 		green "ufw 未安装，即将安装"
 			systemctl stop firewalld
+			systemctl disable firewalld
 			dnf -y install ufw
 			systemctl start ufw
 			systemctl enable ufw
