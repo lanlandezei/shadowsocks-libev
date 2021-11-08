@@ -164,7 +164,7 @@ cat <<-END
     "server_port":$port,
     "method":"$key",
     "password":"$pass",
-    "mode":"tcp_only",
+    "mode":"tcp_and_udp",
     "fast_open":false
 }
 END
