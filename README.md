@@ -14,7 +14,7 @@
 
 ### 安装方法
 ```
-wget --no-check-certificate https://raw.githubusercontent.com/lanlandezei/shadowsocks-libev/main/install.sh && chmod +x install.sh && bash install.sh
+wget https://raw.githubusercontent.com/lanlandezei/shadowsocks-libev/main/install.sh && chmod +x install.sh && bash install.sh
 ```
 ```
 请选择执行的操作
