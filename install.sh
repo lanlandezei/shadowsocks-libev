@@ -31,11 +31,11 @@ ufwin()
 		read -p "请输入添加放行防火墙的IP或IP段：" ip1
 		read -p "请输入放行端口：" port
 		if [[ ! -z `echo $ip1 | sed -nr -e '/([0-9]{1,3}\.){3}[0]\/24/p' -e '/([0-9]{1,3}\.){2}[0]\.{1}[0]{1}\/16/p'` ]];then
-			ufw allow from $ip1 to any port $port proto tcp
+			ufw allow from $ip1 to any port $port
 			ufw status
 			break
 		elif [[ ! -z `echo $ip1 | grep -o -E '([0-9]{1,3}\.){3}[0-9]{1,3}'` ]];then
-			ufw allow from $ip1 to any port $port proto tcp
+			ufw allow from $ip1 to any port $port
 			ufw status
 			break
 		else
